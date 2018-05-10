@@ -56,6 +56,16 @@ public:
   }
 };
 
+bool CheckSubOrder(
+  const std::string& order_id, std::string* parent_order_id) {
+	std::string::size_type n = order_id.find('_');
+	if (std::string::npos == n) {
+	  return false;
+	}
+	*parent_order_id = order_id.substr(0, n);
+  return true;
+}
+
 int main(int argc, char *argv[])
 {
   std::vector<std::string> v;
@@ -93,4 +103,19 @@ int main(int argc, char *argv[])
   }
 
   std::cout << "HeHeHeHeHe" << DingStream::Ding() << "HaHaHaHaHa" << std::endl;
+
+	printf("=======================================\n");
+	std::vector<std::string> order_test_v {
+    "a3uc-eunc3427-24hu",
+		"39r2-x8emv932-asd8_1",
+		"39r2-x8emv932-asd8_2",
+		"131c-34dsnjd3-sd78",
+		"39r2-x8emv932-asd8_3"
+	};
+  for (const auto& s : order_test_v) {
+		std::string ps = "";
+    bool ret = CheckSubOrder(s, &ps);
+    std::cout << "ret[" << ret << "] s[" << s << "] ps[" << ps << "]" << std::endl;
+	}
+
 }

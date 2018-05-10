@@ -39,12 +39,10 @@ const DingStream Ding;
 class HeHe {
 public:
   HeHe() {
-    printf("1\n");
-    exit(1);
-    printf("2\n");
+		std::cout << "new" << std::endl;
   }
   virtual ~HeHe() {
-    printf("exit\n");
+		std::cout << "delete" << std::endl;
   }
 };
 
@@ -59,8 +57,20 @@ int main(int argc, char *argv[]) {
   oss << "one\t" << "1\t";
   printf("%s\n", oss.str().c_str());
 
+  // HeHe hehe;
+  // sleep(2);
 
-  HeHe hehe;
-  sleep(2);
+	std::cout << "=============" << std::endl;
+	{
+		std::cout << "before" << std::endl;
+		HeHe a;
+		std::cout << "after" << std::endl;
+	}
+  std::cout << "=============" << std::endl;
+	{
+		std::cout << "before" << std::endl;
+		HeHe();
+		std::cout << "after" << std::endl;
+	}
 }
 
