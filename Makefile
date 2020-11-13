@@ -12,5 +12,5 @@ $(EXECS): %.run: %.$(SUFFIX)
 	@echo "======== compile $< ========"
 	@$(CC) $(FLAGS) -o $@ $^
 clean:
-	@rm -f $(PWD)/*.run
+	@rm -rf $(PWD)/*.run $(PWD)/*.dSYM
 	@echo "======== clean done ========"

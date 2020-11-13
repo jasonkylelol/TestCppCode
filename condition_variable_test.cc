@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
   sleep(5);
   NotifyAll(true);
 
-  for (const auto& th : th_v) {
+  for (auto& th : th_v) {
     th.join();
   }
 }

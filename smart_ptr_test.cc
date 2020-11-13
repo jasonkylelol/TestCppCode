@@ -9,7 +9,7 @@ private:
 public:
 	Dummy() {
 		printf("new\n");
-		ptr = malloc(1024*1024);
+		ptr = (char*)malloc(1024*1024);
 	}
 	virtual ~Dummy() {
 		printf("del\n");

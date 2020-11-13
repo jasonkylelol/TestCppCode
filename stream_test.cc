@@ -34,7 +34,7 @@ class MyMsg {
   int m_int = 66;
 };
 
-const DingStream Ding;
+DingStream Ding;
 
 class HeHe {
 public:

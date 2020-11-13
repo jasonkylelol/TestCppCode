@@ -48,7 +48,7 @@ class SqlMeta : public SqlMetaBase {
 		}
 }; // class SqlMeta
 
-int main(int argc, char *argv) {
+int main(int argc, char **argv) {
 	auto func = [&] (std::string s) {
 		std::cout << "string[" << s << "]" << std::endl;
 	};

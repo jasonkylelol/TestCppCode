@@ -91,7 +91,7 @@ int main(int argc, char *argv[]) {
 
   int64_t sec = atoi(argv[1]);
 	std::tm tm;
-	if (nullptr == gmtime_r(&sec, &tm)) {
+	if (nullptr == gmtime_r((const long *)&sec, &tm)) {
 		std::cout << "gmtime_r failed!\n";
 		exit(1);
 	}
